@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Drive Video Player</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="neon">Watch Together</h1>
+        <input type="text" id="videoUrl" placeholder="Enter Google Drive Video URL">
+        <button class="btn" id="loadVideo">Load Video</button>
+        <button class="btn" id="generatePin" style="display: none;">Generate PIN for Sync</button>
+        <p id="pinDisplay" class="neon"></p>
+        <input type="password" id="pinInput" placeholder="Enter PIN to join">
+        <button class="btn" id="joinSync">Join Sync</button>
+        <video id="videoPlayer" controls></video>
+        <div id="chatBox" style="display: none;">
+            <div id="messages"></div>
+            <input type="text" id="chatInput" placeholder="Type a message">
+            <button class="btn" id="sendMessage">Send</button>
+        </div>
+    </div>
+    <!-- Host Name Entry Modal -->
+    <div id="hostNameModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Enter Your Name</h2>
+            <input type="text" id="hostNameModalInput" placeholder="Enter your name">
+            <button class="btn" id="submitHostName">Submit</button>
+        </div>
+    </div>
+    <!-- Viewer Name Entry Modal -->
+    <div id="viewerNameModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Enter Your Name</h2>
+            <input type="text" id="viewerNameModalInput" placeholder="Enter your name">
+            <button class="btn" id="submitViewerName">Submit</button>
+        </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
